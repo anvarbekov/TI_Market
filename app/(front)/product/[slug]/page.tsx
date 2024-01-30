@@ -42,6 +42,7 @@ export default async function ProductDetails({
             width={640}
             height={640}
             sizes="100vw"
+            className='rounded'
             style={{
               width: '100%',
               height: 'auto',

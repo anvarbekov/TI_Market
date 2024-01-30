@@ -49,6 +49,7 @@ export default function CartDetails() {
                           alt={item.name}
                           width={50}
                           height={50}
+                          className='rounded'
                         ></Image>
                         <span className="px-2">{item.name}</span>
                       </Link>
