@@ -119,13 +119,13 @@ const Form = () => {
                           href={`/product/${item.slug}`}
                           className="flex items-center"
                         >
-                          <Image
+                          <img
                             src={item.image}
                             alt={item.name}
                             width={50}
                             height={50}
                             className='rounded'
-                          ></Image>
+                          />
                           <span className="px-2">
                             {item.name}({item.color} {item.size})
                           </span>

@@ -36,7 +36,7 @@ export default async function ProductDetails({
       </div>
       <div className="grid md:grid-cols-4 md:gap-3">
         <div className="md:col-span-2">
-          <Image
+          <img
             src={product.image}
             alt={product.name}
             width={640}
@@ -47,7 +47,7 @@ export default async function ProductDetails({
               width: '100%',
               height: 'auto',
             }}
-          ></Image>
+          />
         </div>
         <div>
           <ul className="space-y-4">
