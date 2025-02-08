@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import useSWRMutation from 'swr/mutation'
-import Image from 'next/image'
 
 const Form = () => {
   const router = useRouter()
@@ -42,7 +41,7 @@ const Form = () => {
       const data = await res.json()
       if (res.ok) {
         clear()
-        toast.success('Order placed successfully')
+        toast.success('Buyurtma muvaffaqiyatli topshirildi')
         return router.push(`/order/${data.order._id}`)
       } else {
         toast.error(data.message)
@@ -74,7 +73,7 @@ const Form = () => {
         <div className="overflow-x-auto md:col-span-3">
           <div className="card bg-base-300">
             <div className="card-body">
-              <h2 className="card-title">Shipping Address</h2>
+              <h2 className="card-title">Yetkazib berish manzili</h2>
               <p>{shippingAddress.fullName}</p>
               <p>
                 {shippingAddress.address}, {shippingAddress.city},{' '}
@@ -82,7 +81,7 @@ const Form = () => {
               </p>
               <div>
                 <Link className="btn" href="/shipping">
-                  Edit
+                  Tahrirlash
                 </Link>
               </div>
             </div>
@@ -90,11 +89,11 @@ const Form = () => {
 
           <div className="card bg-base-300 mt-4">
             <div className="card-body">
-              <h2 className="card-title">Payment Method</h2>
+              <h2 className="card-title">To'lov usuli</h2>
               <p>{paymentMethod}</p>
               <div>
                 <Link className="btn" href="/payment">
-                  Edit
+                  Tahrirlash
                 </Link>
               </div>
             </div>
@@ -102,13 +101,13 @@ const Form = () => {
 
           <div className="card bg-base-300 mt-4">
             <div className="card-body">
-              <h2 className="card-title">Items</h2>
+              <h2 className="card-title">Tovar turi</h2>
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
+                    <th>Tovar turi</th>
+                    <th>Miqdori</th>
+                    <th>Narxi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -141,7 +140,7 @@ const Form = () => {
               </table>
               <div>
                 <Link className="btn" href="/cart">
-                  Edit
+                  Tahrirlash
                 </Link>
               </div>
             </div>
@@ -151,29 +150,29 @@ const Form = () => {
         <div>
           <div className="card bg-base-300">
             <div className="card-body">
-              <h2 className="card-title">Order Summary</h2>
+              <h2 className="card-title">Buyurtma xulosasi</h2>
               <ul className="space-y-3">
                 <li>
                   <div className=" flex justify-between">
-                    <div>Items</div>
+                    <div>Tovar narxi</div>
                     <div>${itemsPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className=" flex justify-between">
-                    <div>Tax</div>
+                    <div>Taksi</div>
                     <div>${taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className=" flex justify-between">
-                    <div>Shipping</div>
+                    <div>Yetkazib berish</div>
                     <div>${shippingPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className=" flex justify-between">
-                    <div>Total</div>
+                    <div>Jami summa</div>
                     <div>${totalPrice}</div>
                   </div>
                 </li>
@@ -187,7 +186,7 @@ const Form = () => {
                     {isPlacing && (
                       <span className="loading loading-spinner"></span>
                     )}
-                    Place Order
+                    Buyurtma berish
                   </button>
                 </li>
               </ul>

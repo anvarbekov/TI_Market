@@ -9,12 +9,12 @@ const Sidebar = () => {
   const { data: categories, error } = useSWR('/api/products/categories')
 
   if (error) return error.message
-  if (!categories) return 'Loading...'
+  if (!categories) return '...'
 
   return (
     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
       <li>
-        <h2 className="text-xl">Shop By Department</h2>
+        <h2 className="text-xl text-center uppercase">Bo'limlar bo'yicha saralash</h2>
       </li>
       {categories.map((category: string) => (
         <li key={category}>

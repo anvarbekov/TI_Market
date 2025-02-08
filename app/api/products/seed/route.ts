@@ -14,7 +14,7 @@ export const GET = async (request: NextRequest) => {
   await ProductModel.insertMany(products)
 
   return NextResponse.json({
-    message: 'seeded successfully',
+    message: 'Boshlang‘ich ma’lumotlar muvaffaqiyatli qo‘shildi',
     users,
     products,
   })

@@ -3,7 +3,7 @@ import { Rating } from '@/components/products/Rating'
 import productServices from '@/lib/services/productService'
 import Link from 'next/link'
 
-const sortOrders = ['newest', 'lowest', 'highest', 'rating']
+const sortOrders = ['Eng yangi', 'Eng past', 'Eng yuqori', 'Reyting']
 const prices = [
   {
     name: '$1 to $50',
@@ -40,14 +40,14 @@ export async function generateMetadata({
     price !== 'all'
   ) {
     return {
-      title: `Search ${q !== 'all' ? q : ''}
-          ${category !== 'all' ? ` : Category ${category}` : ''}
-          ${price !== 'all' ? ` : Price ${price}` : ''}
-          ${rating !== 'all' ? ` : Rating ${rating}` : ''}`,
+      title: `Qidiruv ${q !== 'all' ? q : ''}
+          ${category !== 'all' ? ` : Kategoriya ${category}` : ''}
+          ${price !== 'all' ? ` : Narx ${price}` : ''}
+          ${rating !== 'all' ? ` : Reyting ${rating}` : ''}`,
     }
   } else {
     return {
-      title: 'Search Products',
+      title: 'Mahsulotlarni qidirish',
     }
   }
 }
@@ -102,9 +102,9 @@ export default async function SearchPage({
     sort,
   })
   return (
-    <div className="grid md:grid-cols-5 md:gap-5">
+    <div className="grid md:grid-cols-5 md:gap-5 mb-6">
       <div>
-        <div className="text-xl pt-3">Department</div>
+        <div className="text-xl pt-3">Bo'limlar</div>
         <div>
           <ul>
             <li>
@@ -114,7 +114,7 @@ export default async function SearchPage({
                 }`}
                 href={getFilterUrl({ c: 'all' })}
               >
-                Any
+                Har qanday
               </Link>
             </li>
             {categories.map((c: string) => (
@@ -132,7 +132,7 @@ export default async function SearchPage({
           </ul>
         </div>
         <div>
-          <div className="text-xl pt-3">Price</div>
+          <div className="text-xl pt-3">Narx</div>
           <ul>
             <li>
               <Link
@@ -141,7 +141,7 @@ export default async function SearchPage({
                 }`}
                 href={getFilterUrl({ p: 'all' })}
               >
-                Any
+                Har qanday
               </Link>
             </li>
             {prices.map((p) => (
@@ -159,7 +159,7 @@ export default async function SearchPage({
           </ul>
         </div>
         <div>
-          <div className="text-xl pt-3">Customer Review</div>
+          <div className="text-xl pt-3">Reyting bo'yicha</div>
           <ul>
             <li>
               <Link
@@ -168,7 +168,7 @@ export default async function SearchPage({
                   'all' === rating && 'link-primary'
                 }`}
               >
-                Any
+                Har qanday
               </Link>
             </li>
             {ratings.map((r) => (
@@ -179,7 +179,7 @@ export default async function SearchPage({
                     `${r}` === rating && 'link-primary'
                   }`}
                 >
-                  <Rating caption={' & up'} value={r}></Rating>
+                  <Rating caption={' & yuqoriga'} value={r}></Rating>
                 </Link>
               </li>
             ))}
@@ -189,23 +189,23 @@ export default async function SearchPage({
       <div className="md:col-span-4">
         <div className="flex items-center justify-between  py-4">
           <div className="flex items-center">
-            {products.length === 0 ? 'No' : countProducts} Results
+            {products.length === 0 ? 'Yoq' : countProducts} Natijalar
             {q !== 'all' && q !== '' && ' : ' + q}
             {category !== 'all' && ' : ' + category}
-            {price !== 'all' && ' : Price ' + price}
-            {rating !== 'all' && ' : Rating ' + rating + ' & up'}
+            {price !== 'all' && ' : Narx ' + price}
+            {rating !== 'all' && ' : Reyting ' + rating + ' & yuqoriga'}
             &nbsp;
             {(q !== 'all' && q !== '') ||
             category !== 'all' ||
             rating !== 'all' ||
             price !== 'all' ? (
               <Link className="btn btn-sm btn-ghost" href="/search">
-                Clear
+                Tozalash
               </Link>
             ) : null}
           </div>
           <div>
-            Sort by{' '}
+            Saralash turi{' '}
             {sortOrders.map((s) => (
               <Link
                 key={s}
@@ -221,7 +221,7 @@ export default async function SearchPage({
         </div>
 
         <div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3  ">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 mb-4">
             {products.map((product) => (
               <ProductItem key={product.slug} product={product} />
             ))}

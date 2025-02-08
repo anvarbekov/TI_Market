@@ -25,7 +25,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
       const data = await res.json()
       if (!res.ok) return toast.error(data.message)
 
-      toast.success('Product updated successfully')
+      toast.success('Mahsulot muvaffaqiyatli yangilandi')
       router.push('/admin/products')
     }
   )
@@ -54,7 +54,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
   }
 
   if (error) return error.message
-  if (!product) return 'Loading...'
+  if (!product) return 'Yuklanmoqda...'
 
   const FormInput = ({
     id,
@@ -89,7 +89,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
   )
 
   const uploadHandler = async (e: any) => {
-    const toastId = toast.loading('Uploading image...')
+    const toastId = toast.loading('Rasm yuklanmoqda...')
     try {
       const resSign = await fetch('/api/cloudinary-sign', {
         method: 'POST',
@@ -110,7 +110,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
       )
       const data = await res.json()
       setValue('image', data.secure_url)
-      toast.success('File uploaded successfully', {
+      toast.success('Fayl muvaffaqiyatli yuklandi', {
         id: toastId,
       })
     } catch (err: any) {
@@ -121,16 +121,16 @@ export default function ProductEditForm({ productId }: { productId: string }) {
   }
 
   return (
-    <div>
-      <h1 className="text-2xl py-4">Edit Product {formatId(productId)}</h1>
+    <div className='mb-10'>
+      <h1 className="text-2xl py-4">Mahsulotni tahrirlash {formatId(productId)}</h1>
       <div>
         <form onSubmit={handleSubmit(formSubmit)}>
-          <FormInput name="Name" id="name" required />
+          <FormInput name="Nomi" id="name" required />
           <FormInput name="Slug" id="slug" required />
-          <FormInput name="Image" id="image" required />
+          <FormInput name="Rasm linki" id="image" required />
           <div className="md:flex mb-6">
             <label className="label md:w-1/5" htmlFor="imageFile">
-              Upload Image
+              Rasm yuklash
             </label>
             <div className="md:w-4/5">
               <input
@@ -141,11 +141,11 @@ export default function ProductEditForm({ productId }: { productId: string }) {
               />
             </div>
           </div>
-          <FormInput name="Price" id="price" required />
-          <FormInput name="Category" id="category" required />
-          <FormInput name="Brand" id="brand" required />
-          <FormInput name="Description" id="description" required />
-          <FormInput name="Count In Stock" id="countInStock" required />
+          <FormInput name="Narxi" id="price" required />
+          <FormInput name="Kategoriyasi" id="category" required />
+          <FormInput name="Brendi" id="brand" required />
+          <FormInput name="Tavsifi" id="description" required />
+          <FormInput name="Holati" id="countInStock" required />
 
           <button
             type="submit"
@@ -153,10 +153,10 @@ export default function ProductEditForm({ productId }: { productId: string }) {
             className="btn btn-primary"
           >
             {isUpdating && <span className="loading loading-spinner"></span>}
-            Update
+            Yangilash
           </button>
           <Link className="btn ml-4 " href="/admin/products">
-            Cancel
+            Bekor qilish
           </Link>
         </form>
       </div>

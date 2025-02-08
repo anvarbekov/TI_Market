@@ -19,11 +19,11 @@ export default function CartDetails() {
 
   return (
     <>
-      <h1 className="py-4 text-2xl">Shopping Cart</h1>
+      <h1 className="py-4 text-2xl">Xarid savati</h1>
 
       {items.length === 0 ? (
         <div>
-          Cart is empty. <Link href="/">Go shopping</Link>
+          Cart bo'sh!.  <Link className='text-success' href="/">Mahsulotlarga qayting</Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
@@ -31,9 +31,9 @@ export default function CartDetails() {
             <table className="table">
               <thead>
                 <tr>
-                  <th>Item</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
+                  <th>Tovar turi</th>
+                  <th>Miqdori</th>
+                  <th>Narxi</th>
                 </tr>
               </thead>
               <tbody>
@@ -83,7 +83,7 @@ export default function CartDetails() {
                 <ul>
                   <li>
                     <div className="pb-3 text-xl">
-                      Subtotal ({items.reduce((a, c) => a + c.qty, 0)}) : $
+                      Oraliq jami ({items.reduce((a, c) => a + c.qty, 0)}) : $
                       {itemsPrice}
                     </div>
                   </li>
@@ -92,7 +92,7 @@ export default function CartDetails() {
                       onClick={() => router.push('/shipping')}
                       className="btn btn-primary w-full"
                     >
-                      Proceed to Checkout
+                      Kassalar
                     </button>
                   </li>
                 </ul>

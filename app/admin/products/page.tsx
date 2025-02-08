@@ -2,7 +2,7 @@ import AdminLayout from '@/components/admin/AdminLayout'
 import Products from './Products'
 
 export const metadata = {
-  title: 'Admin Products',
+  title: 'Administrator mahsulotlari',
 }
 const AdminProductsPage = () => {
   return (

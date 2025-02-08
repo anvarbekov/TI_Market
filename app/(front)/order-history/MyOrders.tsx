@@ -17,8 +17,8 @@ export default function MyOrders() {
 
   if (!mounted) return <></>
 
-  if (error) return 'An error has occurred.'
-  if (!orders) return 'Loading...'
+  if (error) return 'Xatolik yuz berdi.'
+  if (!orders) return 'Yuklanmoqda...'
 
   return (
     <div className="overflow-x-auto">
@@ -26,11 +26,11 @@ export default function MyOrders() {
         <thead>
           <tr>
             <th>ID</th>
-            <th>DATE</th>
-            <th>TOTAL</th>
-            <th>PAID</th>
-            <th>DELIVERED</th>
-            <th>ACTION</th>
+            <th>SANA</th>
+            <th>JAMI</th>
+            <th>TO'LANGAN</th>
+            <th>YETKAZIB BERILGAN</th>
+            <th>HARAKATLAR</th>
           </tr>
         </thead>
         <tbody>
@@ -51,7 +51,7 @@ export default function MyOrders() {
               </td>
               <td>
                 <Link href={`/order/${order._id}`} passHref>
-                  Details
+                  Tafsilotlar
                 </Link>
               </td>
             </tr>

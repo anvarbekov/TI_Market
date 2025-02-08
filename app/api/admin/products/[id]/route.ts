@@ -6,7 +6,7 @@ export const GET = auth(async (...args: any) => {
   const [req, { params }] = args
   if (!req.auth || !req.auth.user?.isAdmin) {
     return Response.json(
-      { message: 'unauthorized' },
+      { message: 'ruxsatsiz' },
       {
         status: 401,
       }
@@ -16,7 +16,7 @@ export const GET = auth(async (...args: any) => {
   const product = await ProductModel.findById(params.id)
   if (!product) {
     return Response.json(
-      { message: 'product not found' },
+      { message: 'mahsulot topilmadi' },
       {
         status: 404,
       }
@@ -29,7 +29,7 @@ export const PUT = auth(async (...args: any) => {
   const [req, { params }] = args
   if (!req.auth || !req.auth.user?.isAdmin) {
     return Response.json(
-      { message: 'unauthorized' },
+      { message: 'ruxsatsiz' },
       {
         status: 401,
       }

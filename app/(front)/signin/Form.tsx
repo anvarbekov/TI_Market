@@ -44,11 +44,11 @@ const Form = () => {
   return (
     <div className="max-w-sm  mx-auto card bg-base-300 my-4">
       <div className="card-body">
-        <h1 className="card-title">Sign in</h1>
+        <h1 className="card-title">Kirish</h1>
         {params.get('error') && (
           <div className="alert text-error">
             {params.get('error') === 'CredentialsSignin'
-              ? 'Invalid email or password'
+              ? 'Yaroqsiz elektron pochta yoki parol'
               : params.get('error')}
           </div>
         )}
@@ -64,10 +64,10 @@ const Form = () => {
               type="text"
               id="email"
               {...register('email', {
-                required: 'Email is required',
+                required: 'Elektron pochta kerak',
                 pattern: {
                   value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                  message: 'Email is invalid',
+                  message: 'Elektron pochta manzili yaroqsiz',
                 },
               })}
               className="input input-bordered w-full max-w-sm"
@@ -78,13 +78,13 @@ const Form = () => {
           </div>
           <div className="my-2">
             <label className="label" htmlFor="password">
-              Password
+              Parol
             </label>
             <input
               type="password"
               id="password"
               {...register('password', {
-                required: 'Password is required',
+                required: 'Parol talab qilinadi',
               })}
               className="input input-bordered w-full max-w-sm"
             />
@@ -101,14 +101,14 @@ const Form = () => {
               {isSubmitting && (
                 <span className="loading loading-spinner"></span>
               )}
-              Sign in
+              Kirish
             </button>
           </div>
         </form>
         <div>
-          Need an account?{' '}
+          Hisob kerakmi?{' '}
           <Link className="link" href={`/register?callbackUrl=${callbackUrl}`}>
-            Register
+            Roʻyxatdan oʻtish
           </Link>
         </div>
       </div>

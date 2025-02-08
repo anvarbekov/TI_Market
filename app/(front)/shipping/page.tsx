@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Form from './Form'
 
 export const metadata: Metadata = {
-  title: 'Shipping Address',
+  title: 'Yetkazib berish manzili',
 }
 
 export default async function ShippingPage() {

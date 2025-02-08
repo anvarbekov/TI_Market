@@ -52,7 +52,7 @@ const Form = () => {
         }),
       })
       if (res.status === 200) {
-        toast.success('Profile updated successfully')
+        toast.success('Profil muvaffaqiyatli yangilandi')
         const newSession = {
           ...session,
           user: {
@@ -64,7 +64,7 @@ const Form = () => {
         await update(newSession)
       } else {
         const data = await res.json()
-        toast.error(data.message || 'error')
+        toast.error(data.message || 'xatolik')
       }
     } catch (err: any) {
       const error =
@@ -77,17 +77,17 @@ const Form = () => {
   return (
     <div className="max-w-sm  mx-auto card bg-base-300 my-4">
       <div className="card-body">
-        <h1 className="card-title">Profile</h1>
+        <h1 className="card-title">Profil</h1>
         <form onSubmit={handleSubmit(formSubmit)}>
           <div className="my-2">
             <label className="label" htmlFor="name">
-              Name
+              Ismingiz
             </label>
             <input
               type="text"
               id="name"
               {...register('name', {
-                required: 'Name is required',
+                required: 'Ism talab qilinadi',
               })}
               className="input input-bordered w-full max-w-sm"
             />
@@ -103,7 +103,7 @@ const Form = () => {
               type="text"
               id="email"
               {...register('email', {
-                required: 'Email is required',
+                required: 'Elektron pochta kerak',
                 pattern: {
                   value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                   message: 'Email is invalid',
@@ -117,7 +117,7 @@ const Form = () => {
           </div>
           <div className="my-2">
             <label className="label" htmlFor="password">
-              New Password
+              Yangi parol
             </label>
             <input
               type="password"
@@ -131,7 +131,7 @@ const Form = () => {
           </div>
           <div className="my-2">
             <label className="label" htmlFor="confirmPassword">
-              Confirm New Password
+              Yangi parolni tasdiqlang
             </label>
             <input
               type="password"
@@ -158,7 +158,7 @@ const Form = () => {
               {isSubmitting && (
                 <span className="loading loading-spinner"></span>
               )}
-              Update
+              Yangilash
             </button>
           </div>
         </form>

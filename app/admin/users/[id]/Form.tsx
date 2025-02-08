@@ -25,7 +25,7 @@ export default function UserEditForm({ userId }: { userId: string }) {
       const data = await res.json()
       if (!res.ok) return toast.error(data.message)
 
-      toast.success('User updated successfully')
+      toast.success('Foydalanuvchi muvaffaqiyatli yangilandi')
       router.push('/admin/users')
     }
   )
@@ -49,7 +49,7 @@ export default function UserEditForm({ userId }: { userId: string }) {
   }
 
   if (error) return error.message
-  if (!user) return 'Loading...'
+  if (!user) return 'Yuklanmoqda...'
 
   const FormInput = ({
     id,
@@ -85,10 +85,10 @@ export default function UserEditForm({ userId }: { userId: string }) {
 
   return (
     <div>
-      <h1 className="text-2xl py-4">Edit User {formatId(userId)}</h1>
+      <h1 className="text-2xl py-4">Foydalanuvchini tahrirlash {formatId(userId)}</h1>
       <div>
         <form onSubmit={handleSubmit(formSubmit)}>
-          <FormInput name="Name" id="name" required />
+          <FormInput name="Ismi" id="name" required />
           <FormInput name="Email" id="email" required />
 
           <div className="md:flex my-3">
@@ -111,10 +111,10 @@ export default function UserEditForm({ userId }: { userId: string }) {
             className="btn btn-primary"
           >
             {isUpdating && <span className="loading loading-spinner"></span>}
-            Update
+            Yangilash
           </button>
           <Link className="btn ml-4" href="/admin/users">
-            Cancel
+            Bekor qilish
           </Link>
         </form>
       </div>

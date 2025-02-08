@@ -72,13 +72,13 @@ const Form = () => {
       <CheckoutSteps current={1} />
       <div className="max-w-sm mx-auto card bg-base-300 my-4">
         <div className="card-body">
-          <h1 className="card-title">Shipping Address</h1>
+          <h1 className="card-title">Yetkazib berish manzili</h1>
           <form onSubmit={handleSubmit(formSubmit)}>
-            <FormInput name="Full Name" id="fullName" required />
-            <FormInput name="Address" id="address" required />
-            <FormInput name="City" id="city" required />
-            <FormInput name="Postal Code" id="postalCode" required />
-            <FormInput name="Country" id="country" required />
+            <FormInput name="Ismingiz" id="fullName" required />
+            <FormInput name="Manzilingiz" id="address" required />
+            <FormInput name="Shahar yoki Tuman" id="city" required />
+            <FormInput name="Pochta kodi" id="postalCode" required />
+            <FormInput name="Mamlakat" id="country" required />
             <div className="my-2">
               <button
                 type="submit"
@@ -88,7 +88,7 @@ const Form = () => {
                 {isSubmitting && (
                   <span className="loading loading-spinner"></span>
                 )}
-                Next
+                Keyingi bosqich
               </button>
             </div>
           </form>

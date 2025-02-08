@@ -30,7 +30,7 @@ const AdminLayout = async ({
                 className={'dashboard' === activeItem ? 'active' : ''}
                 href="/admin/dashboard"
               >
-                Dashboard
+                Boshqaruv paneli
               </Link>
             </li>
             <li>
@@ -38,7 +38,7 @@ const AdminLayout = async ({
                 className={'orders' === activeItem ? 'active' : ''}
                 href="/admin/orders"
               >
-                Orders
+                Buyurtmalar
               </Link>
             </li>
             <li>
@@ -46,7 +46,7 @@ const AdminLayout = async ({
                 className={'products' === activeItem ? 'active' : ''}
                 href="/admin/products"
               >
-                Products
+                Mahsulotlar
               </Link>
             </li>
             <li>
@@ -54,7 +54,7 @@ const AdminLayout = async ({
                 className={'users' === activeItem ? 'active' : ''}
                 href="/admin/users"
               >
-                Users
+                Foydalanuvchilar
               </Link>
             </li>
           </ul>

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Form from './Form'
 
 export const metadata: Metadata = {
-  title: 'Sign in',
+  title: 'Kirish',
 }
 
 export default async function Signin() {

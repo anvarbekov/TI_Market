@@ -24,7 +24,7 @@ export default function useLayoutService() {
     drawerOpen,
     toggleTheme: () => {
       layoutStore.setState({
-        theme: theme === 'dark' ? 'light' : 'dark',
+        theme: theme === 'dim' ? 'bumblebee' : 'dim',
       })
     },
     toggleDrawer: () => {

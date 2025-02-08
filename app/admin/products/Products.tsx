@@ -15,7 +15,7 @@ export default function Products() {
   const { trigger: deleteProduct } = useSWRMutation(
     `/api/admin/products`,
     async (url, { arg }: { arg: { productId: string } }) => {
-      const toastId = toast.loading('Deleting product...')
+      const toastId = toast.loading("Mahsulot o'chirilmoqda...")
       const res = await fetch(`${url}/${arg.productId}`, {
         method: 'DELETE',
         headers: {
@@ -24,7 +24,7 @@ export default function Products() {
       })
       const data = await res.json()
       res.ok
-        ? toast.success('Product deleted successfully', {
+        ? toast.success('Mahsulot muvaffaqiyatli oʻchirildi', {
             id: toastId,
           })
         : toast.error(data.message, {
@@ -45,25 +45,25 @@ export default function Products() {
       const data = await res.json()
       if (!res.ok) return toast.error(data.message)
 
-      toast.success('Product created successfully')
+      toast.success('Mahsulot muvaffaqiyatli yaratildi')
       router.push(`/admin/products/${data.product._id}`)
     }
   )
 
-  if (error) return 'An error has occurred.'
-  if (!products) return 'Loading...'
+  if (error) return 'Xatolik yuz berdi.'
+  if (!products) return 'Yuklanmoqda...'
 
   return (
     <div>
       <div className="flex justify-between items-center">
-        <h1 className="py-4 text-2xl">Products</h1>
+        <h1 className="py-4 text-2xl">Mahsulotlar</h1>
         <button
           disabled={isCreating}
           onClick={() => createProduct()}
           className="btn btn-primary btn-sm"
         >
           {isCreating && <span className="loading loading-spinner"></span>}
-          Create
+          Qo'shish
         </button>
       </div>
 
@@ -72,12 +72,12 @@ export default function Products() {
           <thead>
             <tr>
               <th>id</th>
-              <th>name</th>
-              <th>price</th>
-              <th>category</th>
-              <th>count in stock</th>
-              <th>rating</th>
-              <th>actions</th>
+              <th>nomi</th>
+              <th>narxi</th>
+              <th>kategoriyasi</th>
+              <th>zaxirada qancha</th>
+              <th>reyting</th>
+              <th>harakatlar</th>
             </tr>
           </thead>
           <tbody>
@@ -95,7 +95,7 @@ export default function Products() {
                     type="button"
                     className="btn btn-ghost btn-sm"
                   >
-                    Edit
+                    Tahrirlash
                   </Link>
                   &nbsp;
                   <button
@@ -103,7 +103,7 @@ export default function Products() {
                     type="button"
                     className="btn btn-ghost btn-sm"
                   >
-                    Delete
+                    Oʻchirish
                   </button>
                 </td>
               </tr>

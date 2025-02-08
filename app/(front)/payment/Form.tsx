@@ -24,11 +24,11 @@ const Form = () => {
   return (
     <div>
       <CheckoutSteps current={2} />
-      <div className="max-w-sm mx-auto card bg-base-300 my-4">
+      <div className="max-w-sm mx-auto card my-4">
         <div className="card-body">
-          <h1 className="card-title">Payment Method</h1>
+          <h1 className="card-title">To'lov usullari</h1>
           <form onSubmit={handleSubmit}>
-            {['PayPal', 'Stripe', 'CashOnDelivery'].map((payment) => (
+            {['PayPal', 'Stripe', 'Yetkazib berilganda naqd pul'].map((payment) => (
               <div key={payment}>
                 <label className="label cursor-pointer">
                   <span className="label-text">{payment}</span>
@@ -45,7 +45,7 @@ const Form = () => {
             ))}
             <div className="my-2">
               <button type="submit" className="btn btn-primary w-full">
-                Next
+                Keyingi bosqish
               </button>
             </div>
             <div className="my-2">
@@ -54,7 +54,7 @@ const Form = () => {
                 className="btn w-full my-2"
                 onClick={() => router.back()}
               >
-                Back
+                Ortga qaytish
               </button>
             </div>
           </form>

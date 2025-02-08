@@ -55,7 +55,7 @@ const Form = () => {
       })
       if (res.ok) {
         return router.push(
-          `/signin?callbackUrl=${callbackUrl}&success=Account has been created`
+          `/signin?callbackUrl=${callbackUrl}&success=Hisob yaratildi`
         )
       } else {
         const data = await res.json()
@@ -64,25 +64,25 @@ const Form = () => {
     } catch (err: any) {
       const error =
         err.message && err.message.indexOf('E11000') === 0
-          ? 'Email is duplicate'
+          ? 'Elektron pochta dublikat'
           : err.message
-      toast.error(error || 'error')
+      toast.error(error || 'xato!')
     }
   }
   return (
     <div className="max-w-sm  mx-auto card bg-base-300 my-4">
       <div className="card-body">
-        <h1 className="card-title">Register</h1>
+        <h1 className="card-title">Roʻyxatdan oʻtish</h1>
         <form onSubmit={handleSubmit(formSubmit)}>
           <div className="my-2">
             <label className="label" htmlFor="name">
-              Name
+              Ism
             </label>
             <input
               type="text"
               id="name"
               {...register('name', {
-                required: 'Name is required',
+                required: 'Ism talab qilinadi',
               })}
               className="input input-bordered w-full max-w-sm"
             />
@@ -98,10 +98,10 @@ const Form = () => {
               type="text"
               id="email"
               {...register('email', {
-                required: 'Email is required',
+                required: 'Elektron pochta kerak',
                 pattern: {
                   value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                  message: 'Email is invalid',
+                  message: 'Elektron pochta manzili yaroqsiz',
                 },
               })}
               className="input input-bordered w-full max-w-sm"
@@ -112,13 +112,13 @@ const Form = () => {
           </div>
           <div className="my-2">
             <label className="label" htmlFor="password">
-              Password
+              Parol
             </label>
             <input
               type="password"
               id="password"
               {...register('password', {
-                required: 'Password is required',
+                required: 'Parol talab qilinadi',
               })}
               className="input input-bordered w-full max-w-sm"
             />
@@ -128,16 +128,16 @@ const Form = () => {
           </div>
           <div className="my-2">
             <label className="label" htmlFor="confirmPassword">
-              Confirm Password
+              Parolni tasdiqlang
             </label>
             <input
               type="password"
               id="confirmPassword"
               {...register('confirmPassword', {
-                required: 'Confirm Password is required',
+                required: 'Parolni tasdiqlash talab qilinadi',
                 validate: (value) => {
                   const { password } = getValues()
-                  return password === value || 'Passwords should match!'
+                  return password === value || 'Parollar mos kelishi kerak!'
                 },
               })}
               className="input input-bordered w-full max-w-sm"
@@ -155,16 +155,16 @@ const Form = () => {
               {isSubmitting && (
                 <span className="loading loading-spinner"></span>
               )}
-              Register
+              Roʻyxatdan oʻtish
             </button>
           </div>
         </form>
 
         <div className="divider"> </div>
         <div>
-          Already have an account?{' '}
+          Hisobingiz bormi?{' '}
           <Link className="link" href={`/signin?callbackUrl=${callbackUrl}`}>
-            Login
+            Kirish
           </Link>
         </div>
       </div>

@@ -61,7 +61,7 @@ export default function OrderDetails({
   const { data, error } = useSWR(`/api/orders/${orderId}`)
 
   if (error) return error.message
-  if (!data) return 'Loading...'
+  if (!data) return 'Yuklanmoqda...'
 
   const {
     paymentMethod,
@@ -84,7 +84,7 @@ export default function OrderDetails({
         <div className="md:col-span-3">
           <div className="card bg-base-300">
             <div className="card-body">
-              <h2 className="card-title">Shipping Address</h2>
+              <h2 className="card-title">Yetkazib berish manzili</h2>
               <p>{shippingAddress.fullName}</p>
               <p>
                 {shippingAddress.address}, {shippingAddress.city},{' '}
@@ -93,32 +93,32 @@ export default function OrderDetails({
               {isDelivered ? (
                 <div className="text-success">Delivered at {deliveredAt}</div>
               ) : (
-                <div className="text-error">Not Delivered</div>
+                <div className="text-error">Yetkazib berilmagan</div>
               )}
             </div>
           </div>
 
           <div className="card bg-base-300 mt-4">
             <div className="card-body">
-              <h2 className="card-title">Payment Method</h2>
+              <h2 className="card-title">To'lov usuli</h2>
               <p>{paymentMethod}</p>
               {isPaid ? (
-                <div className="text-success">Paid at {paidAt}</div>
+                <div className="text-success">Toʻlangan {paidAt}</div>
               ) : (
-                <div className="text-error">Not Paid</div>
+                <div className="text-error">Toʻlanmagan</div>
               )}
             </div>
           </div>
 
           <div className="card bg-base-300 mt-4">
             <div className="card-body">
-              <h2 className="card-title">Items</h2>
+              <h2 className="card-title">Tovar turi</h2>
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
+                    <th>Tovar turi</th>
+                    <th>Miqdori</th>
+                    <th>Narxi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -154,29 +154,29 @@ export default function OrderDetails({
         <div>
           <div className="card bg-base-300">
             <div className="card-body">
-              <h2 className="card-title">Order Summary</h2>
+              <h2 className="card-title">Buyurtma xulosasi</h2>
               <ul>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Items</div>
+                    <div>Tovar</div>
                     <div>${itemsPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Tax</div>
+                    <div>Taksi</div>
                     <div>${taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Shipping</div>
+                    <div>Yetkazib berish</div>
                     <div>${shippingPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Total</div>
+                    <div>Jami</div>
                     <div>${totalPrice}</div>
                   </div>
                 </li>
@@ -203,7 +203,7 @@ export default function OrderDetails({
                       {isDelivering && (
                         <span className="loading loading-spinner"></span>
                       )}
-                      Mark as delivered
+                      Yetkazib berilgan deb belgilang!
                     </button>
                   </li>
                 )}

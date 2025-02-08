@@ -1,16 +1,19 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Arvo } from 'next/font/google'
 import Providers from '@/components/Providers'
 import DrawerButton from '@/components/DrawerButton'
 import Sidebar from '@/components/Sidebar'
 import Header from '@/components/header/Header1'
 
-const inter = Inter({ subsets: ['latin'] })
+const arvo = Arvo({   weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap', });
 
 export const metadata: Metadata = {
-  title: 'Next Amazona V2',
-  description: 'Modern ECommerce Website',
+  title: 'TI Market',
+  description: "Zamonaviy online kiyim do'koni",
 }
 
 export default function RootLayout({
@@ -19,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html data-theme="dim" lang="en">
+      <body className={arvo.className}>
         <Providers>
           <div className="drawer">
             <DrawerButton />
@@ -30,12 +33,12 @@ export default function RootLayout({
                 {children}
                 <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                   <p>
-                    Copyright © 2023 - All right reserved by Next Amazona V2
+                    Mualliflik huquqi © 2025 - Barcha huquqlar "TI Market" tomonidan himoyalangan
                   </p>
                 </footer>
               </div>
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side z-[5]">
               <label
                 htmlFor="my-drawer"
                 aria-label="close sidebar"

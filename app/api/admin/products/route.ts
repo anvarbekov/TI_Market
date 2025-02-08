@@ -27,21 +27,21 @@ export const POST = auth(async (req: any) => {
   }
   await dbConnect()
   const product = new ProductModel({
-    name: 'sample name',
-    slug: 'sample-name-' + Math.random(),
-    image: '/images/shirt1.jpg',
+    name: 'namuna nom',
+    slug: 'namuna-nom-' + Math.random(),
+    image: '/images/namuna.png',
     price: 0,
-    category: 'sample category',
-    brand: 'sample brand',
+    category: 'namuna kategoriyas',
+    brand: 'namuna brand',
     countInStock: 0,
-    description: 'sample description',
-    rating: 0,
-    numReviews: 0,
+    description: 'namuna tavsif',
+    rating: 3.5,
+    numReviews: 356,
   })
   try {
     await product.save()
     return Response.json(
-      { message: 'Product created successfully', product },
+      { message: 'Mahsulot muvaffaqiyatli yaratildi', product },
       {
         status: 201,
       }

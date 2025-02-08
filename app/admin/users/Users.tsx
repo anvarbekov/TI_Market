@@ -12,7 +12,7 @@ export default function Users() {
   const { trigger: deleteUser } = useSWRMutation(
     `/api/admin/users`,
     async (url, { arg }: { arg: { userId: string } }) => {
-      const toastId = toast.loading('Deleting user...')
+      const toastId = toast.loading("Foydalanuvchi o'chirilmoqda...")
       const res = await fetch(`${url}/${arg.userId}`, {
         method: 'DELETE',
         headers: {
@@ -21,7 +21,7 @@ export default function Users() {
       })
       const data = await res.json()
       res.ok
-        ? toast.success('User deleted successfully', {
+        ? toast.success('Foydalanuvchi muvaffaqiyatli oʻchirildi', {
             id: toastId,
           })
         : toast.error(data.message, {
@@ -29,22 +29,22 @@ export default function Users() {
           })
     }
   )
-  if (error) return 'An error has occurred.'
-  if (!users) return 'Loading...'
+  if (error) return 'Xatolik yuz berdi.'
+  if (!users) return 'Yuklanmoqda...'
 
   return (
     <div>
-      <h1 className="py-4 text-2xl">Users</h1>
+      <h1 className="py-4 text-2xl">Foydalanuvchilar</h1>
 
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           <thead>
             <tr>
               <th>id</th>
-              <th>name</th>
+              <th>ismi</th>
               <th>email</th>
               <th>admin</th>
-              <th>actions</th>
+              <th>harakatlar</th>
             </tr>
           </thead>
           <tbody>
@@ -53,7 +53,7 @@ export default function Users() {
                 <td>{formatId(user._id)}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.isAdmin ? 'YES' : 'NO'}</td>
+                <td>{user.isAdmin ? 'Xa' : "Yo'q"}</td>
 
                 <td>
                   <Link
@@ -61,7 +61,7 @@ export default function Users() {
                     type="button"
                     className="btn btn-ghost btn-sm"
                   >
-                    Edit
+                    Tahrirlash
                   </Link>
                   &nbsp;
                   <button
@@ -69,7 +69,7 @@ export default function Users() {
                     type="button"
                     className="btn btn-ghost btn-sm"
                   >
-                    Delete
+                    O'chirish
                   </button>
                 </td>
               </tr>
