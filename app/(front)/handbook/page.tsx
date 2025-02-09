@@ -9,7 +9,7 @@ export default function Page() {
           <div className="relative w-full overflow-hidden pb-[56.25%] h-0">
             <iframe 
               className="absolute top-0 left-0 w-full h-full rounded-md shadow-md"
-              src="https://www.youtube.com/embed/z3VTaHJNs0k?si=idedb1W9YklBNyYL" 
+              src="https://www.youtube.com/embed/329yaerbn80?si=l6A2RKCcGK6Q3yMu" 
               title="YouTube video player" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
             </iframe>
