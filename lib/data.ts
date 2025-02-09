@@ -30,7 +30,7 @@ const data = {
     },
     {
       name: 'Qizil kurtka',
-      slug: 'free-shirt',
+      slug: 'free-shirt1',
       category: 'Futbolkalar',
       image: '/images/namuna.png',
       price: 70,
@@ -42,7 +42,7 @@ const data = {
     },
     {
       name: 'Qizil kurtka',
-      slug: 'free-shirt',
+      slug: 'free-shirt2',
       category: "Ko'ylaklar",
       image: '/images/namuna.png',
       price: 70,
@@ -54,7 +54,7 @@ const data = {
     },
     {
       name: 'Qizil kurtka',
-      slug: 'free-shirt',
+      slug: 'free-shirt3',
       category: "Poyabzallar",
       image: '/images/namuna.png',
       price: 70,
@@ -66,7 +66,7 @@ const data = {
     },
     {
       name: 'Qizil kurtka',
-      slug: 'free-shirt',
+      slug: 'free-shirt4',
       category: "Sviterlar",
       image: '/images/namuna.png',
       price: 70,
@@ -78,7 +78,7 @@ const data = {
     },
     {
       name: 'Qizil kurtka',
-      slug: 'free-shirt',
+      slug: 'free-shirt5',
       category: "Qalpoqlar",
       image: '/images/namuna.png',
       price: 70,
@@ -90,7 +90,7 @@ const data = {
     },
     {
       name: 'Qizil kurtka',
-      slug: 'free-shirt',
+      slug: 'free-shirt6',
       category: "Paypoqlar",
       image: '/images/namuna.png',
       price: 70,
@@ -102,7 +102,7 @@ const data = {
     },
     {
       name: 'Qizil kurtka',
-      slug: 'free-shirt',
+      slug: 'free-shirt7',
       category: "Qo'lqoplar",
       image: '/images/namuna.png',
       price: 70,
@@ -114,7 +114,7 @@ const data = {
     },
     {
       name: 'Qizil kurtka',
-      slug: 'free-shirt',
+      slug: 'free-shirt8',
       category: "Kastyumlar",
       image: '/images/namuna.png',
       price: 70,
